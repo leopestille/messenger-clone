@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FormAutenticacao from "./components/FormAutenticacao";
+import FormAutenticacao from "./components/AuthForm";
 
 export default function Home() {
 	return (
