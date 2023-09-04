@@ -33,6 +33,14 @@ const Input: React.FC<InputProps> = ({
             leading-6
             text-gray-900">{label}
             </label>
+        <div className="mt-2">
+            <input id={id} 
+            type={type}
+            autoComplete={id}
+            disabled={disabled}
+            {...register(id, { required })}
+            className={clsx(``)} />
+        </div>
         </div>
     );
 }

@@ -57,7 +57,9 @@ const AuthForm = () => {
             sm:px-10">
                 <form className="space-y-6"
                 onSubmit={handleSubmit(onSubmit)}>
-                <Input label="Digite seu Email" />
+                <Input label="Digite seu Email" 
+                register={register} 
+                id="email"/>
                 </form>
             </div>
             </div>
