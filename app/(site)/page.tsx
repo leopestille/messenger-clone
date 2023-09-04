@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FormAutenticacao from "./components/FormAutenticacao";
 
 export default function Home() {
 	return (
@@ -35,6 +36,7 @@ export default function Home() {
                     Entrar na sua conta
                 </h2>
             </div>
+            <FormAutenticacao />
 		</div>
 	);
 }
