@@ -68,6 +68,7 @@ const AuthForm = () => {
 								register={register}
 								id="name"
 								errors={errors}
+								disabled={isLoading}
 							/>
 						)}
 						<Input
@@ -76,6 +77,7 @@ const AuthForm = () => {
 							id="email"
 							errors={errors}
 							type="email"
+							disabled={isLoading}
 						/>
 						<Input
 							label="Digite sua Senha"
@@ -83,6 +85,7 @@ const AuthForm = () => {
 							id="password"
 							errors={errors}
 							type="password"
+							disabled={isLoading}
 						/>
 						<div>
 							<Button disabled={isLoading} fullWidth type="submit">
@@ -123,11 +126,11 @@ const AuthForm = () => {
 						>
 							<AuthSocialButton
 								icon={BsGithub}
-								onClick={() => socialAction("github")}
+								onClick={() => socialAction("github")}								
 							/>
 							<AuthSocialButton
 								icon={BsGoogle}
-								onClick={() => socialAction("google")}
+								onClick={() => socialAction("google")}								
 							/>
 						</div>
 					</div>
