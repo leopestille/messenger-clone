@@ -14,7 +14,7 @@ export async function POST (
         password
     } = body;
 
-    if (!email || !name || password) {
+    if (!email || !name || !password) {
         return new NextResponse('Informações Ausentes', { status: 400 });
     }
     let salt = 12;
@@ -31,5 +31,6 @@ export async function POST (
     return NextResponse.json(user);
     } catch (error: any) {
         console.log(error, 'REGISTRATION_ERROR');
+        return new NextResponse('Erro interno do servidor', { status: 500 });
     }
-}
+};
