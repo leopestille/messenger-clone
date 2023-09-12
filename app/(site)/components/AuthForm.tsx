@@ -52,16 +52,28 @@ const AuthForm = () => {
 					toast.error('Credenciais Inválidas')
 				}
 
-				if (callback?.ok) {
+				if (callback?.ok && !callback?.error) {
 					toast.success('Logado com sucesso')
 				}
 			})
+			.finally(() => setIsLoading(false));
         }
     }
 
     const socialAction = (action: string) => {
         setIsLoading(true)
-        //NextAuth para LOGIN usando redes sociais
+        
+		signIn(action, { redirect: false })
+		.then((callback) => {
+			if (callback?.error) {
+				toast.error('Credenciais Inválidas')
+			}
+
+			if (callback?.ok && !callback?.error) {
+				toast.success('Logado com sucesso');
+			}
+		})
+		.finally(() => setIsLoading(false));
     }
 
     return (
